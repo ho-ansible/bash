@@ -14,10 +14,3 @@
     src: bash.bashrc
     dest: /etc/
 
-- name: Install config for less
-  tags:
-  - config
-  copy:
-    src: 71less.sh
-    dest: /etc/profile.d/
-
