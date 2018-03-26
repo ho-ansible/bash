@@ -53,6 +53,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Symlink ssh agent socket to standard place
-if [[ ! -S ~/.ssh/agent.sock && -S "$SSH_AUTH_SOCK" ]]; then
-	ln -sf $SSH_AUTH_SOCK ~/.ssh/agent.sock
+stdsock=~/.ssh/agent.sock
+if [[ -S "$SSH_AUTH_SOCK" ]] && ! SSH_AUTH_SOCK="$stdsock" ssh-add -l 1>&- 2>&-; then
+	ln -sf "$SSH_AUTH_SOCK" "$stdsock"
 fi
+
