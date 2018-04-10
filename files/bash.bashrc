@@ -54,6 +54,7 @@ fi
 
 # Symlink ssh agent socket to standard place
 stdsock=~/.ssh/agent.sock
+mkdir -p ${stdsock%/*}
 if [[ -S "$SSH_AUTH_SOCK" ]] && ! SSH_AUTH_SOCK="$stdsock" ssh-add -l 1>&- 2>&-; then
 	ln -sf "$SSH_AUTH_SOCK" "$stdsock"
 fi
