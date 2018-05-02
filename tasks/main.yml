@@ -2,14 +2,13 @@
 
 - name: Install bash
   tags:
-  - package
+    - package
   package:
     name: bash
-    state: present
 
 - name: Install system bashrc
   tags:
-  - config
+    - config
   copy:
     src: bash.bashrc
     dest: /etc/
