@@ -6,10 +6,12 @@
   package:
     name: bash
 
-- name: Install system bashrc
+- name: Install system and user bashrc
   tags:
     - config
   copy:
-    src: bash.bashrc
-    dest: /etc/
-
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - { src: bash.bashrc, dest: /etc/ }
+    - { src: .bashrc, dest: /etc/.skel/ }
