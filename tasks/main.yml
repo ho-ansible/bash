@@ -14,4 +14,4 @@
     dest: "{{ item.dest }}"
   loop:
     - { src: bash.bashrc, dest: /etc/ }
-    - { src: .bashrc, dest: /etc/.skel/ }
+    - { src: .bashrc, dest: /etc/skel/ }
