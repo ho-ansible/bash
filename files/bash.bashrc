@@ -28,11 +28,11 @@ esac
 # Set shell prompt, with color if available
 tput=/usr/bin/tput
 if [ -x $tput ] && $tput setaf 1 >&/dev/null; then
-        PS1='${chroot}<$?>\h \[\033[36m\]\w \[\033[30;47m\]\!\[\033[0m\]\$ '
+	PS1='\[\e[30;43m\]\h\[\e[0m\]:\[\e[30;46m\]${chroot}\[\e[96;40m\]\w \[\e[30;101m\]${?#0}\[\e[0m\]\$ '
         alias ls='ls --color=auto'
         alias grep='grep --colour=auto'
 else
-        PS1='${chroot}<$?>\h \w \!\$ '
+        PS1='\h:${chroot}\w $?\$ '
 fi
 unset tput
 
