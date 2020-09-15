@@ -2,16 +2,16 @@
 
 - name: Install bash
   tags:
-    - package
+  - package
   package:
     name: bash
 
 - name: Install system and user bashrc
   tags:
-    - config
+  - config
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   loop:
-    - { src: bash.bashrc, dest: /etc/ }
-    - { src: .bashrc, dest: /etc/skel/ }
+  - { src: bash.bashrc, dest: /etc/ }
+  - { src: .bashrc, dest: /etc/skel/ }
