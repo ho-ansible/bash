@@ -1,0 +1,10 @@
+#! /usr/bin/env ansible-playbook
+# Configure template role
+# Replace 'all' with your own inventory group
+---
+- name: bash | shell convenience config
+  hosts: all
+  roles:
+  - role: bash
+    tags:
+    - bash

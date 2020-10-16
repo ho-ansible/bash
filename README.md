@@ -7,19 +7,15 @@ Only tested on Debian stable, for now.
 ## Role variables
 None.
 
+## Playbooks
++ `main.yml`: apply role
++ `uninstall.yml`: remove. Run before removing config from inventory.
+
 ## Dependencies
 None.
 
-## Example Playbook
-
-```
-- hosts: all
-  roles:
-  - { role: ho-ansible.bash }
-```
-
 ## License
-MIT
++ Ansible role licensed [MIT](LICENSE)
 
 ## Author Information
-Sean Ho, https://github.com/ho-ansible/
++ Ansible role by [Sean Ho](https://github.com/ho-ansible/)
